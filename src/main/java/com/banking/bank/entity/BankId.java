@@ -16,4 +16,5 @@ import java.io.Serializable;
 public class BankId implements Serializable {
     private String userId;
     private int accountNo;
+
 }

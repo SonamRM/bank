@@ -1,4 +1,4 @@
-package com.banking.bank.entity;
+package com.banking.bank.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegistrationRequestPOJO {
+public class RegistrationRequest {
     private String userId;
     private int accountNo;
     private String password;

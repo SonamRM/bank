@@ -16,6 +16,8 @@ public class UserDetails {
 
     @EmbeddedId
     private BankId bankIds;
+
+
     @Column(name = "password")
     private String password;
 
