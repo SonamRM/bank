@@ -16,7 +16,6 @@ public class JwtTokenUtil {
     public static String generateToken(String userId, String password) {
         Claims claims = Jwts.claims().setSubject(userId);
         claims.put("user_id", userId);
-        claims.put("password", password);
         return Jwts.builder()
                 .setClaims(claims)
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
