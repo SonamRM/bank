@@ -11,13 +11,15 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user_details")
-public class UserDetails {
+@Table( name = "account_details")
+public class AccountDetails {
 
-    @EmbeddedId
-    private BankId bankIds;
+    @Id
+    @Column(name = "account_no")
+    private Integer accountNo;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "available_balance")
+    private Double availableBalance;
+
 
 }

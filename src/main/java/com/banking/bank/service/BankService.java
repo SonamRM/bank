@@ -1,15 +1,15 @@
 package com.banking.bank.service;
 
 
-import com.banking.bank.dto.LoginRequest;
-import com.banking.bank.dto.RegistrationRequest;
-import com.banking.bank.dto.CommonResponse;
+import com.banking.bank.dto.*;
 
 public interface BankService {
     CommonResponse registrationUserDetails(RegistrationRequest registrationRequestPOJO);
     CommonResponse loginUser(LoginRequest loginRequest);
 
     CommonResponse getAccount(String userId);
+     CommonResponse fundTransfer(FundTransferDTO fundTransferdto);
+     CommonResponse addFund(AddFundDTO addFundDTO);
 
 
 }
