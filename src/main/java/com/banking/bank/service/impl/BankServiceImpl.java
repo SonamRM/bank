@@ -12,10 +12,13 @@ import org.apache.commons.math3.random.RandomDataGenerator;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class BankServiceImpl implements BankService {
     private final BankRepository bankRepository;
+
     private final AccountRepository accountRepository;
 
     private final TransactionsRepository transactionsRepository;
@@ -107,6 +110,18 @@ public class BankServiceImpl implements BankService {
         }
 
         return new CommonResponse(200, null, "Account no doesn't exists");
+    }
+
+    @Override
+    public CommonResponse checkBalance(int accountNo) {
+        AccountDetails accountDetails= accountRepository.findByAccountNo(accountNo);
+        return new CommonResponse(200,accountDetails,null);
+    }
+
+    @Override
+    public CommonResponse transactionHistory(int accountNo) {
+        List<TransactionsDetails> transactionsDetails =transactionsRepository.findByTransactionIdAccountNo(accountNo);
+        return new CommonResponse(200,transactionsDetails,null);
     }
 
     public TransactionsDetails save(int accountNo, Double transactionAmount, String transactionFlag, Integer referenceNumber) {

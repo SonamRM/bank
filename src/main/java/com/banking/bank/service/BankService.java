@@ -10,6 +10,9 @@ public interface BankService {
     CommonResponse getAccount(String userId);
      CommonResponse fundTransfer(FundTransferDTO fundTransferdto);
      CommonResponse addFund(AddFundDTO addFundDTO);
+     CommonResponse checkBalance(int accountNo);
+     CommonResponse transactionHistory(int accountNo);
+
 
 
 }

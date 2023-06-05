@@ -27,7 +27,6 @@ public class TransactionsDetails {
     @Column(name = "transaction_amount")
     private Double transactionAmount;
 
-    @JsonIgnore
     @Column(name = "transaction_flag")
     private String transactionFlag;
 
